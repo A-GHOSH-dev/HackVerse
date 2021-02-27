@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquaculture</title>
+    <style>
+    
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      height: 80px;
+      width: 100%;
+      background: #0c0c0c;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px 0 100px;
+
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-size: 25px;
+      font-weight: 600;
+      margin-left: -80px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 5px;
+    }
+
+    nav ul li a {
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      color: #111;
+      background: #fff;
+    }
+
+    nav .menu-btn i {
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: none;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    @media (max-width: 1000px) {
+      nav {
+        padding: 0 40px 0 50px;
+      }
+    }
+
+    @media (max-width: 920px) {
+      nav .menu-btn i {
+        display: block;
+      }
+
+      #click:checked~.menu-btn i:before {
+        content: "\f00d";
+      }
+
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #111;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      #click:checked~ul {
+        left: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        margin: 40px 0;
+      }
+
+      nav ul li a {
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      #click:checked~ul li a {
+        margin-left: 0px;
+      }
+
+      nav ul li a.active,
+      nav ul li a:hover {
+        background: none;
+        color: cyan;
+      }
+    }
+
+
+
+
+
+
+
+
+.img{
+    width: 100%;
+    height: 527px;
+    margin-left: 0px;
+    opacity: 0.5;
+}
+        /* Dropdown Button */
+.dropbtn1 {
+  background-color: #1046ac;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  
+  
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+  top: -235px;
+  left: 215px;
+  width: 150px;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #ddd;}
+
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+.dropdown1:hover .dropbtn1 {background-color: #1e46b4;}
+
+
+
+
+.dropbtn2 {
+  background-color: #0b4694;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+ 
+  
+  
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+  top: -320px;
+  left: 425px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content2 a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown2:hover .dropdown-content2 {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown2:hover .dropbtn2 {background-color: #1739a7;}
+
+
+
+
+.dropbtn3 {
+  background-color: #153385;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  
+  
+  
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+  top: -235px;
+  left: 720px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content3 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content3 a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown3:hover .dropdown-content3 {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown3:hover .dropbtn3 {background-color: #1032a0;}
+
+
+
+
+.buy{
+    position: absolute;
+    display: flex;
+    top: 200px;
+    height: 160px;
+    width: 160px;
+    left: 170px;
+}
+.sell{
+    position: absolute;
+    display: flex;
+    top: 120px;
+    height: 160px;
+    width: 160px;
+    left: 530px;
+}
+.rent{
+    position: absolute;
+    display: flex;
+    top: 200px;
+    height: 160px;
+    width: 180px;
+    left: 900px;
+}
+
+/* STYLES SPECIFIC TO FOOTER  */
+.footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: #070617;
+            margin-top: -53px;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+          <div class="logo">Agro-Aspire</div>
+          <input type="checkbox" id="click">
+          <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul>
+            <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Donate2.html">Home</a></li>
+            <li><a href="Farmers'Corner.html">Farmers' Corner</a></li>
+            <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Donate1.html">Customers' Corner</a>
+            </li>
+            <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Donate3.html">Workers' Corner</a></li>
+            <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Healthinfochatbot.html">Agro-News</a></li>
+            <li><a
+                href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/covid vaccine open page.html">Donations</a>
+            </li>
+            <li><a
+              href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/covid vaccine open page.html">LOGIN/SIGN UP</a>
+          </li>
+          </ul>
+        </nav>
+    
+    
+        </div>
+    
+      </section>
+    
+    <div>
+        <img src="images/Aquaculture.jpg" class="img">
+        <img src="images/buy.jpg" class="buy">
+        <img src="images/sell.jpg" class="sell">
+        <img src="images/rent.jpg" class="rent">
+        
+    </div>
+    <div class="dropdown1">
+        <button class="dropbtn1">BUY</button>
+        <div class="dropdown-content1">
+          <a href="#">Fish food</a>
+          
+          <a href="#">Fish Bait</a>
+          
+          <a href="#">Fishing Equipments</a>
+        </div>
+      </div>
+      <div class="dropdown2">
+        <button class="dropbtn2">SELL</button>
+        <div class="dropdown-content2">
+          <a href="#">Sea-Fish</a>
+          <a href="#">Fresh-water Fish</a>
+          <a href="#">Crustaeceans</a>
+          <a href="#">Others</a>
+        </div>
+      </div>
+      <div class="dropdown3">
+        <button class="dropbtn3">RENT</button>
+        <div class="dropdown-content3">
+          <a href="#">Fishing Equipments</a>
+          <a href="#">Boat/Streamer</a>
+          <a href="#">Trucks/Transport vehicles</a>
+        </div>
+      </div>
+      
+      <!-- FOOTER START -->
+    <div class="footer">
+        <div class="contain">
+            <div class="col">
+                <h1>Company</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Products</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Accounts</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Resources</h1>
+                <ul>
+                    <li>Webmail</li>
+                    <li>Redeem code</li>
+                    <li>WHOIS lookup</li>
+                    <li>Site map</li>
+                    <li>Web templates</li>
+                    <li>Email templates</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Support</h1>
+                <ul>
+                    <li>Contact us</li>
+                    <li>Web chat</li>
+                    <li>Open ticket</li>
+                </ul>
+            </div>
+            <div class="col social">
+                <h1>Social</h1>
+                <ul>
+                    <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
+                    <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
+                    <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- END OF FOOTER -->
+</body>
+</html>

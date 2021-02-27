@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers' Corner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            height: 80px;
+            width: 100%;
+            background: #0c0c0c;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px 0 100px;
+
+            flex-wrap: wrap;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 600;
+            margin-left: -80px;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #111;
+            background: #fff;
+        }
+
+        nav .menu-btn i {
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        @media (max-width: 1000px) {
+            nav {
+                padding: 0 40px 0 50px;
+            }
+        }
+
+        @media (max-width: 920px) {
+            nav .menu-btn i {
+                display: block;
+            }
+
+            #click:checked~.menu-btn i:before {
+                content: "\f00d";
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: #111;
+                height: 100vh;
+                width: 100%;
+                text-align: center;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+            #click:checked~ul {
+                left: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                margin: 40px 0;
+            }
+
+            nav ul li a {
+                width: 100%;
+                margin-left: -100%;
+                display: block;
+                font-size: 20px;
+                transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            #click:checked~ul li a {
+                margin-left: 0px;
+            }
+
+            nav ul li a.active,
+            nav ul li a:hover {
+                background: none;
+                color: cyan;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .img {
+            width: 100%;
+            margin-left: -10px;
+            height: 100vh;
+            background-image: url('images/farmerquote2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+
+        }
+
+        #effect {
+            width: 100;
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+
+        h1 {
+            top: 40px;
+            text-align: center;
+            position: absolute;
+
+            font-size: 40px;
+            font-weight: bolder;
+
+        }
+
+
+        .container1 {
+            position: absolute;
+            width: 25%;
+            margin-top: 70px;
+            margin-left: -620px;
+        }
+
+        .image1 {
+            opacity: 1;
+            display: block;
+            width: 100px;
+            height: 280px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border-color: rgb(2, 105, 7);
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container1:hover .image1 {
+            opacity: 0.3;
+        }
+
+        .container1:hover .middle {
+            opacity: 1;
+        }
+
+        .text1 {
+            background-color: #0b6808;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 16px 32px;
+        }
+
+
+
+
+
+
+        .container2 {
+            position: absolute;
+            width: 25%;
+            margin-top: 70px;
+            margin-left: 600px;
+        }
+
+        .image2 {
+            opacity: 1;
+            display: block;
+            width: 100px;
+            height: 280px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border-color: rgb(6, 25, 136);
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container2:hover .image2 {
+            opacity: 0.3;
+        }
+
+        .container2:hover .middle {
+            opacity: 1;
+        }
+
+        .text2 {
+            background-color: #0407c4;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 16px 32px;
+        }
+
+
+
+
+
+
+        .container3 {
+            position: absolute;
+            width: 25%;
+            margin-top: 1000px;
+            margin-left: -620px;
+        }
+
+        .image3 {
+            opacity: 1;
+            display: block;
+            width: 100px;
+            height: 280px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border-color: rgb(184, 75, 12);
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container3:hover .image3 {
+            opacity: 0.3;
+        }
+
+        .container3:hover .middle {
+            opacity: 1;
+        }
+
+        .text3 {
+            background-color: #dd7310;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+
+        .container4 {
+            position: absolute;
+            width: 25%;
+            margin-top: 1000px;
+            margin-left: 600px;
+        }
+
+        .image4 {
+            opacity: 1;
+            display: block;
+            width: 100px;
+            height: 280px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border-color: rgb(112, 110, 10);
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container4:hover .image4 {
+            opacity: 0.3;
+        }
+
+        .container4:hover .middle {
+            opacity: 1;
+        }
+
+        .text4 {
+            background-color: #66680b;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+        .container5 {
+            position: absolute;
+            width: 25%;
+            margin-top: 1940px;
+            margin-left: -620px;
+        }
+
+        .image5 {
+            opacity: 1;
+            display: block;
+            width: 100px;
+            height: 280px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border-color: rgb(145, 3, 102);
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container5:hover .image5 {
+            opacity: 0.3;
+        }
+
+        .container5:hover .middle {
+            opacity: 1;
+        }
+
+        .text5 {
+            background-color: #96057e;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+
+
+        .container6 {
+            position: absolute;
+            width: 25%;
+            margin-top: 1940px;
+            margin-left: 600px;
+        }
+
+        .image6 {
+            opacity: 1;
+            display: block;
+            width: 100px;
+            height: 280px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            border-color: rgb(139, 13, 51);
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container6:hover .image6 {
+            opacity: 0.3;
+        }
+
+        .container6:hover .middle {
+            opacity: 1;
+        }
+
+        .text6 {
+            background-color: #920b2d;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: rgb(7, 7, 7);
+            font-size: 15px;
+            font-weight: bolder;
+            color: rgb(247, 246, 250);
+            border-radius: 5px;
+            width: 180px;
+            height: 50px;
+            position: relative;
+            margin-top: 10px;
+            margin-left: 66px;
+
+        }
+
+
+
+        #ii {
+            color: white;
+            text-decoration: none;
+        }
+
+        #jj {
+            color: white;
+            text-decoration: none;
+        }
+
+        #kk {
+            color: white;
+            text-decoration: none;
+        }
+
+        #ll {
+            color: white;
+            text-decoration: none;
+        }
+
+        #mm {
+            color: white;
+            text-decoration: none;
+        }
+
+        #nn {
+            color: white;
+            text-decoration: none;
+        }
+
+        .under {
+            height: 30px;
+            width: 550px;
+            position: absolute;
+            top: 110px;
+            left: 360px;
+        }
+
+        /* STYLES SPECIFIC TO FOOTER  */
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: #070617;
+            margin-top: 900px;
+        }
+
+        .footer .col {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-size: 12px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer .col ul li {
+            color: #999999;
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+
+        .social ul li {
+            display: inline-block;
+            padding-right: 5px !important;
+        }
+
+        .footer .col ul li:hover {
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            .contain {
+                width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 1139px) {
+            .contain .social {
+                width: 1000px;
+                display: block;
+            }
+
+            .social h1 {
+                margin: 0px;
+            }
+        }
+
+        @media only screen and (max-width: 950px) {
+            .footer .col {
+                width: 33%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .footer .col {
+                width: 50%;
+            }
+
+            .footer .col h1 {
+                font-size: 14px;
+            }
+
+            .footer .col ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+            .footer .col {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="logo">Agro-Aspire</div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Donate2.html">Home</a></li>
+                <li><a href="Farmers'Corner.html">Farmers' Corner</a></li>
+                <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Donate1.html">Customers'
+                        Corner</a>
+                </li>
+                <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Donate3.html">Workers'
+                        Corner</a></li>
+                <li><a
+                        href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/Healthinfochatbot.html">Agro-News</a>
+                </li>
+                <li><a
+                        href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/covid vaccine open page.html">Donations</a>
+                </li>
+                <li><a href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/covid vaccine open page.html">LOGIN/SIGN
+                        UP</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <div class="img"></div>
+
+    <div id="effect">
+        <h1>Services for the Farmers</h1>
+        <div class="underline"><img src="images/underline.jpg" class="under"></div>
+
+
+
+
+        <div class="container1">
+            <img src="images/paddy.jpg" alt="Agriculture" class="image1" style="width:100%">
+            <div class="middle">
+                <div class="text1">Agriculture</div>
+
+            </div>
+            <button class="btn"><a id="ii"
+                    href="Agriculture.html">Agriculture</a></button>
+        </div>
+
+
+
+        <div class="container2">
+            <img src="images/aqua.jpg" alt="aquaculture" class="image2" style="width:100%">
+            <div class="middle">
+                <div class="text2">Aquaculture</div>
+            </div>
+            <button class="btn"><a id="jj"
+                    href="Aquaculture.html">Aquaculture</a></button>
+        </div>
+
+
+
+
+        <div class="container3">
+            <img src="images/honey.jpg" alt="Apiculture" class="image3" style="width:100%">
+            <div class="middle">
+                <div class="text3">Apiculture</div>
+            </div>
+            <button class="btn"><a id="kk"
+                    href="Apiculture.html">Apiculture</a></button>
+        </div>
+
+
+
+
+
+        <div class="container4">
+            <img src="images/livestock.jpg" alt="Livestock" class="image4" style="width:100%">
+            <div class="middle">
+                <div class="text4">Livestock</div>
+            </div>
+            <button class="btn"><a id="ll"
+                    href="Livestock.html">Livestock</a></button>
+        </div>
+
+
+
+
+        <div class="container5">
+            <img src="images/bot.jpg" alt="Ask Your Agro-Doubt" class="image5" style="width:100%">
+            <div class="middle">
+                <div class="text5">Agro-Doubt Bot</div>
+            </div>
+            <button class="btn"><a id="mm"
+                    href="chatbot.html">Agro-Doubt
+                    Bot</a></button>
+        </div>
+
+
+
+
+        <div class="container6">
+            <img src="images/worker.jpg" alt="Connect with workers" class="image6" style="width:100%">
+            <div class="middle">
+                <div class="text6">Connect with workers</div>
+            </div>
+            <button class="btn"><a id="nn"
+                    href="C://Users/anany/Desktop/VIT/HACKATHONS/HackNITP 3.0 2020 Jan/intestine table.html">Connect
+                    with Workers</a></button>
+        </div>
+       
+
+
+    </div>
+
+    </div>
+    <!-- FOOTER START -->
+    <div class="footer">
+        <div class="contain">
+            <div class="col">
+                <h1>Company</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Products</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Accounts</h1>
+                <ul>
+                    <li>About</li>
+                    <li>Mission</li>
+                    <li>Services</li>
+                    <li>Social</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Resources</h1>
+                <ul>
+                    <li>Webmail</li>
+                    <li>Redeem code</li>
+                    <li>WHOIS lookup</li>
+                    <li>Site map</li>
+                    <li>Web templates</li>
+                    <li>Email templates</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Support</h1>
+                <ul>
+                    <li>Contact us</li>
+                    <li>Web chat</li>
+                    <li>Open ticket</li>
+                </ul>
+            </div>
+            <div class="col social">
+                <h1>Social</h1>
+                <ul>
+                    <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
+                    <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
+                    <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- END OF FOOTER -->
+
+
+</body>
+<script>
+    window.onload = function () {
+        const EFFECT = document.querySelector("#effect");
+        window.addEventListener('scroll', scrollEffect);
+        function scrollEffect() {
+            if (window.scrollY >= 500) {
+                EFFECT.style.opacity = '1';
+                EFFECT.style.transform = 'translateX(0px)';
+                EFFECT.style.transition = '1s ease-in-out';
+            }
+            else {
+                EFFECT.style.opacity = '0';
+                EFFECT.style.transform = 'translateX(-50px)';
+
+            }
+        }
+        scrollEffect();
+    }
+
+
+</script>
+
+
+</html>
