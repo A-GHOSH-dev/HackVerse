@@ -17,3 +17,4 @@ Customers’ Corner- Can Buy, Can upload articles on agriculture for all to see 
 NGO/Consultant Corner- Can showcase their details of their work in the website, NGOs and Start-ups get a platform to show their work, connect with the farmers and help them  |  
 Agro-News- All news and updates related to agriculture are posted here hence farmers and all other can be updated and aware of the issues and advancements  |  
 
+Example: In the Sunderbans in West Bengal, the only way of income or livelihood of the people there is Apiculture and honey. They risk their lives and go into the jungles where the beehives are along with RoyalBengalTigers.Many men have lost their lives.But still they go to bring honey to make some money and feed people at home. Hence we promote their products and help them get attached to the tech world and thus support their hardwork.
